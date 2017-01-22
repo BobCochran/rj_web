@@ -1,7 +1,7 @@
 {
   "name": "rj_web",
   "version": "0.0.1",
-  "private" : "true",
+  "private": "true",
   "description": "Display a bicycle ride journal",
   "main": "index.js",
   "scripts": {
@@ -9,13 +9,16 @@
   },
   "author": "Bob Cochran <r2cochran2@gmail.com>",
   "license": "MIT",
-  "repository" :
-   { "type" : "git"
-   , "url" : "https://github.com/BobCochran/rj_web.git"
-   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BobCochran/rj_web.git"
+  },
   "dependencies": {
     "express": "^4.14.0",
     "mongodb": "^2.2.21",
     "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "morgan": "^1.7.0"
   }
 }
