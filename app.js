@@ -11,7 +11,6 @@ app.use(express.static(__dirname + '/static'))
 app.get('/', function (req, res) {
 
     var MongoClient = require('mongodb').MongoClient
-        , co = require('co')
         , assert = require('assert');
 
     var host = process.env['MONGO_NODE_DRIVER_HOST2'] != null ? process.env['MONGO_NODE_DRIVER_HOST2'] : 'localhost';
@@ -36,6 +35,7 @@ app.get('/', function (req, res) {
 
     MongoClient.connect(url, function (err, db) {
 
+        assert.equal(null, err)
 
         console.log("Connected successfully to server on " + url + "\n");
 
@@ -46,23 +46,30 @@ app.get('/', function (req, res) {
         /* Perform an aggregation query. We want to know how many miles each team did, and sort in
         * descending order on the aggregated miles by team. */
 
-        var docs = yield collection.aggregate( [ {$unwind : "$rides"},
+        var docs = collection.aggregate( [ {$unwind : "$rides"},
             { $group : { _id : "$team", tot_miles : {$sum: "$rides.miles"}, tot_points: { $sum : "$rides.points"} } },
             { $sort : {  "tot_miles" : 1, "dep_time" : 1  }}
             ]
-        ).limit(60).toArray()
-        assert.equal(60,docs.length)
+        ).limit(60).toArray( function (err, docs) {
+            assert.equal(err, null)
+            console.log("\nFound the following records in docs\n")
+            console.log(docs)
+            results_from_mongo.push.apply(results_from_mongo, docs)
+        })
+
         db.close()
 
-        results_from_mongo.push.apply(results_from_mongo, docs)
 
-    }).catch(function(err) {
-        console.log(err.stack)
-    })
+
+    });
 
     /* One can look at the console output, too. */
 
-    console.log(results_from_mongo)
+    setTimeout( function () {
+        console.log("\nResult set is " + "\n" + results_from_mongo.toString())
+    }, 1100)
+
+
 
 })
 
