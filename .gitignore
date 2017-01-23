@@ -46,4 +46,8 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+# Webstorm/JetBrains project files
+
+.idea
+/idea/*
 
