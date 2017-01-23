@@ -34,8 +34,9 @@ app.get('/', function (req, res) {
 
     var listTime = []
 
-    co(function*() {
-        var db = yield MongoClient.connect(url)
+    MongoClient.connect(url, function (err, db) {
+
+
         console.log("Connected successfully to server on " + url + "\n");
 
         //let's get the collection
