@@ -4,11 +4,24 @@ This is a Node.js web project to manage a bicycle ride journaling application.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Note that as of January 2017, the Node.js driver for MongoDB does not yet support the "NumberDecimal" (Decimal128) data format. 
 
 ### Prerequisites
 
-MongoDB Community Edition, version 3.4 or newer. Database collections in this project make use of the NumberDecimal format, which is new in MongoDB 3.4
+For all activities:
+
+MongoDB Community Edition, version 3.4 or newer. Database collections in this project make use of the NumberDecimal format, which is new in MongoDB 3.4.
+
+Node.js 7.4 or higher.
+
+Express.js in the current version.
+
+Pug.js in the current version. 
+
+Development dependencies:
+
+morgan
+
 
 ```
 Give examples
@@ -16,19 +29,27 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+##MongoDB Server
 
-Say what the step will be
+Install MongoDB Server, in at least version 3.4. The easiest way to do this is by using a supported package manager. You do not need to install to a separate host; MongoDB runs fine on the same machine you are developing on.
+
+##Node.js
+
+Install Node.js, either as a pre-built binary or by compiling from source code. The developer for this project compiles Node from source and installs to a user home directory, e.g. to /home/username/local.
+
+If compiling Node from source, run the optional tests: 
 
 ```
-Give the example
+make test
 ```
 
-And repeat
+### Install dependencies
 
 ```
-until finished
+cd rj_web
+npm install
 ```
+### Put test data on the MongoDB Server
 
 End with an example of getting some data out of the system or using it for a little demo
 
@@ -58,9 +79,6 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Contributing
 
@@ -68,15 +86,16 @@ Add additional notes about how to deploy this on a live system
 
 ## Versioning 
 
+Versions ending in an odd number are development versions.
 ## Authors
 
 * **Bob Cochran** - *Initial work* - [BobCochran](https://github.com/BobCochran)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/rj_web/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the "Unlicense" [LICENSE.txt](LICENSE.txt) file for details
 
 ## Acknowledgments
 
