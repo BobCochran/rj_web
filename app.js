@@ -67,7 +67,7 @@ app.get('/', function (req, res) {
 
     setTimeout( function () {
         console.log("\nResult set is " + "\n" + results_from_mongo.toString())
-    }, 1100)
+    }, 600)
 
 
 
