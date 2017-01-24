@@ -48,7 +48,7 @@ app.get('/', function (req, res) {
 
         var docs = collection.aggregate( [ {$unwind : "$rides"},
             { $group : { _id : "$team", tot_miles : {$sum: "$rides.miles"}, tot_points: { $sum : "$rides.points"} } },
-            { $sort : {  "tot_miles" : 1, "dep_time" : 1  }}
+            { $sort : {  "tot_miles" : 1 }}
             ]
         ).limit(60).toArray( function (err, docs) {
             assert.equal(err, null)
