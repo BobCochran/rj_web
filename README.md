@@ -55,6 +55,27 @@ Clone [the data repository](https://github.com/BobCochran/freezingsaddles.git) a
 
 This project started out with documents that contain the miles and points fields formatted in the new (for 2016 and 2017) MongoDB "NumberDecimal" format. However, the Node.js mongodb driver version 2.2.17 does not support NumberDecimal at this time. In fact, JavaScript itself does not support any field format larger than Float64 at this time. Because of this, the test MongoDB collection format used miles and points field values which are in the "NumberLong" format. Code is implemented to use a scale factor to present these fields in decimal format.
 
+## Try out the website
+With the database up and running, open a terminal window and on the command line type:
+```angular2html
+node applong.js
+```
+...and press the <enter> key. This will start the http server. Now open your favorite browser and in the omnibar type
+```angular2html
+http://localhost:3000/
+```
+...and you should see a nicely formatted web page showing the top riding teams in the competition.
+
+If you can't use port 3000, you have two ways to change it to a port you can use:
+```angular2html
+export PORT=portnum
+```
+or edit applong.js in the app.listen() function and set the desired port number there.
+ 
+ Once you have the server listening to the desired port, you can even display it on your cell phone's browser provided the phone is on the same IP network as your development machine is on. You can open a new page on your cell phone's browser and navigate to the development machine address and port:
+ ```angular2html
+http://your-development-machine-hostname:port/
+```
 ## Running the tests
 
 Explain how to run the automated tests for this system
