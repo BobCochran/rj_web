@@ -51,8 +51,9 @@ cd rj_web
 npm install
 ```
 ### Put test data on the MongoDB Server
+Clone [the data repository](https://github.com/BobCochran/freezingsaddles.git) and switch to the nosql branch. Follow the instructions given in the data directory for populating a MongoDB collection with documents. Comprehensive documentation of the data structures is located in the docs directory. Initial test data is provided so you can get up and running fast.
 
-This project started out with documents that contain the miles and points fields formatted in the new (for 2016 and 2017) MongoDB "NumberDecimal" format. However, the Node.js mongodb driver version 2.2.17 does not support NumberDecimal at this time. In fact, JavaScript itself does not support any field format larger than Float64 at this time. Because of this, MongoDB collection formats might be converted to "NumberLong" and code implemented to use a scale factor if we need to present the miles and points field in decimal format.
+This project started out with documents that contain the miles and points fields formatted in the new (for 2016 and 2017) MongoDB "NumberDecimal" format. However, the Node.js mongodb driver version 2.2.17 does not support NumberDecimal at this time. In fact, JavaScript itself does not support any field format larger than Float64 at this time. Because of this, the test MongoDB collection format used miles and points field values which are in the "NumberLong" format. Code is implemented to use a scale factor to present these fields in decimal format.
 
 ## Running the tests
 
