@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+
+        title= title
+        style
+            include ../../static/css/mongostyle2.css
+
+    body
+        h1= message
+
+        p The top teams
+        div
+            table
+                thead
+                    tr
+                        th Team Number
+                        th Total Miles
+                        th Total Points
+                tbody
+                    each mongo_result, i in results
+                        tr
+                            td= mongo_result._id
+                            td= mongo_result.tot_miles
+                            td= mongo_result.tot_points
+
+        include footer.pug
