@@ -50,7 +50,7 @@ app.get('/', function (req, res) {
 
         var docs = collection.aggregate( [ {$unwind : "$rides"},
             { $group : { _id : "$team", tot_miles : {$sum: "$rides.miles"}, tot_points: { $sum : "$rides.points"} } },
-            { $sort : {  "tot_miles" : 1 }}
+            { $sort : {  "tot_miles" : -1 }}
             ]
         ).limit(60).toArray( function (err, docs) {
             assert.equal(err, null)
@@ -68,7 +68,7 @@ app.get('/', function (req, res) {
 
     setTimeout( function () {
         console.log("\nOne item from the result set is " + "\n" + results_from_mongo[0]._id)
-        res.render('flights', { title: 'Ride Journal', message: 'Ride Journal', results: results_from_mongo})
+        res.render('rides', { title: 'Ride Journal', message: 'Ride Journal', results: results_from_mongo})
     }, 500)
 
 
