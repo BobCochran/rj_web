@@ -69,7 +69,7 @@ app.get('/', function (req, res) {
     setTimeout( function () {
         console.log("\nOne item from the result set is " + "\n" + results_from_mongo[0]._id)
         res.render('rides', { title: 'Ride Journal', message: 'Ride Journal', results: results_from_mongo})
-    }, 500)
+    }, 20)
 
 
 
