@@ -4,11 +4,11 @@ This is a Node.js web project to manage a bicycle ride journaling application.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Development of this app was done on a Mac OS X system. It should run fine on any platform, including Microsoft Windows. It is assumed that you are comfortable working on the command line and that you understand how to do things like setting environment variables on your development system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. All code is in JavaScript, html, and CSS. Development of this app was done on a Mac OS X system. It should run fine on any platform, including Microsoft Windows. It is assumed that you are comfortable working on the command line and that you understand how to do things like setting environment variables on your development system.
 
 If you have several hosts running on a network, and you expect to run a database server on its own host, we assume that you have a running DNS server for your network and that you are able to perform forward and reverse lookups of all your hosts. In this scenario yyou should be able to ping a host by both hostname and IP address.
  
- You may want to take [free MongoDB classes](https://university.mongodb.com/) to get training in how this nosql database server works. For JavaScript, consider the course M101JS. There is also a course covering MongoDB for Java Developers: check the M101J course description. 
+ You may want to take [free MongoDB classes](https://university.mongodb.com/) to get training in how this nosql database server works. For JavaScript application development with MongoDB, consider the course M101JS. There is also a course covering MongoDB for Java Developers: check the M101J course description. The developer for this app took both these courses.
 
 ### Prerequisites
 
@@ -21,6 +21,8 @@ Node.js 7.4 or higher. The Node.js environment utilizes the V8 JavaScript engine
 Express.js in the current version. Express acts as a routing engine for http requests and responses.
 
 Pug.js in the current version. Pug is a templating or view engine. It can compile and execute web page templates.
+
+Recent web browsers should be installed on your development machine. This application was tested primarily on Chrome 56. You should be developing with the very latest versions of the popular web browsers. 
 
 Development dependencies:
 
