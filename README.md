@@ -76,6 +76,8 @@ or edit applong.js in the app.listen() function and set the desired port number 
  ```angular2html
 http://your-development-machine-hostname:port/
 ```
+The final slash '/' is important because that is the first character of the query string, and in an Express.js application, routing is done based on the value of the query string.
+
 ## Running the tests
 
 Explain how to run the automated tests for this system
