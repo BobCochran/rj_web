@@ -100,7 +100,6 @@ This project is licensed under the "Unlicense" [LICENSE.txt](LICENSE.txt) file f
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* CSS code from [Codepen](https://codepen.io/cbracco/pen/zekgx) for an always-on-the-bottom footer 
+
 
