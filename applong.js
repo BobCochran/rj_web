@@ -30,6 +30,8 @@ app.get('/', function (req, res) {
 
     var efd
 
+    var valueD
+
 //Array to hold the date objects.
 
     var listTime = []
@@ -64,10 +66,30 @@ app.get('/', function (req, res) {
 
     });
 
-    /* One can look at the console output, too. */
+    /* We need to apply a scale factor to the values tot_miles and tot_points, so that they can be sent to
+     * the pug template with decimal points inserted. For example, if the database stores "miles" as
+     * "NumberLong(1700)", in this application the number of miles ridden is 17.00, not 1700.00. We want to
+     *  reformat the tot_miles aggregated miles for the team to set the decimal point properly. */
 
     setTimeout( function () {
-        console.log("\nOne item from the result set is " + "\n" + results_from_mongo[0]._id)
+
+        for (var j = 0; j < results_from_mongo.length; j++) {
+
+            valueD = results_from_mongo[j].tot_miles * 0.01
+
+            valueD = valueD.toFixed(2)
+
+            results_from_mongo[j].edited_miles = valueD
+
+            valueD = results_from_mongo[j].tot_points * 0.01
+
+            valueD = valueD.toFixed(2)
+
+            results_from_mongo[j].edited_points = valueD
+
+        }
+
+        console.log("\nShow points with a fixed number of decimal places " + "\n" + results_from_mongo[0].edited_points)
         res.render('rides', { title: 'Ride Journal', message: 'Ride Journal', results: results_from_mongo})
     }, 20)
 
