@@ -33,3 +33,17 @@ p {
     font-family: 'Trebuchet MS', serif;
     font-size: 125%;
 }
+p.footer {
+    color: blue;
+    font-family: 'Trebuchet MS', serif;
+    font-size: 95%;
+}
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
