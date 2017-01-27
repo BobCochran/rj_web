@@ -4,7 +4,11 @@ This is a Node.js web project to manage a bicycle ride journaling application.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Note that as of January 2017, the Node.js driver for MongoDB does not yet support the "NumberDecimal" (Decimal128) data format. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Development of this app was done on a Mac OS X system. It should run fine on any platform, including Microsoft Windows. It is assumed that you are comfortable working on the command line and that you understand how to do things like setting environment variables on your development system.
+
+If you have several hosts running on a network, and you expect to run a database server on its own host, we assume that you have a running DNS server for your network and that you are able to perform forward and reverse lookups of all your hosts. In this scenario yyou should be able to ping a host by both hostname and IP address.
+ 
+ You may want to take [free MongoDB classes](https://university.mongodb.com/) to get training in how this nosql database server works. For JavaScript, consider the course M101JS. There is also a course covering MongoDB for Java Developers: check the M101J course description. 
 
 ### Prerequisites
 
@@ -22,11 +26,6 @@ Development dependencies:
 
 morgan. This application acts as an http logger. It writes log entries to the console, thus allowing the developer to track what http request and responses were issued by this application. 
 
-
-```
-Give examples
-```
-
 ## Installing
 
 ###MongoDB Server
@@ -40,7 +39,7 @@ Set up environment variables that point to the host and port number of your serv
 
 are set up with the host that is running the server and the port number the server is listening on, respectively. For example, host1.example.com is the hostname and 27017 is the port. If no environment variables are set on your development machine, the scripts default to localhost:27017.
 
-##Node.js
+###Node.js
 
 Install Node.js, either as a pre-built binary or by compiling from source code. The developer for this project compiles Node from source and installs to a user home directory, e.g. to /home/username/local. The rationale behind not installing at the system level is to avoid possible conflicts with other users on the system.
 
