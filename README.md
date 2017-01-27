@@ -27,11 +27,18 @@ morgan. This application acts as an http logger. It writes log entries to the co
 Give examples
 ```
 
-### Installing
+## Installing
 
-##MongoDB Server
+###MongoDB Server
 
 Install MongoDB Server, in at least version 3.4. The easiest way to do this is by using a supported package manager. You do not need to install to a separate host; MongoDB runs fine on the same machine you are developing on.
+
+Set up environment variables that point to the host and port number of your server. The applong.js (and other) scripts on this app assume that the environment variables
+
+* MONGO_NODE_DRIVER_WEST
+* MONGO_NODE_DRIVER_PORT_WEST
+
+are set up with the host that is running the server and the port number the server is listening on, respectively. For example, host1.example.com is the hostname and 27017 is the port. If no environment variables are set on your development machine, the scripts default to localhost:27017.
 
 ##Node.js
 
