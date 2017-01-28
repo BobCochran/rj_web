@@ -1,5 +1,6 @@
 var express = require('express')
     , logger = require('morgan')
+    , members = require('./members1.js').getMembers()
     , app = express()
 
 
@@ -90,6 +91,7 @@ app.get('/', function (req, res) {
         }
 
         console.log("\nShow points with a fixed number of decimal places " + "\n" + results_from_mongo[0].edited_points)
+
         res.render('rides', { title: 'Ride Journal', message: 'Ride Journal', results: results_from_mongo})
     }, 20)
 
