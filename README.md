@@ -32,7 +32,7 @@ morgan. This application acts as an http logger. It writes log entries to the co
 
 ### MongoDB Server
 
-Install MongoDB Server, in at least version 3.4. The easiest way to do this is by using a supported package manager. You do not need to install to a separate host; MongoDB runs fine on the same machine you are developing on.
+Install MongoDB Server, in at least version 3.4. The easiest way to do this is by using a supported package manager. You do not need to install to a separate host; MongoDB runs fine on the same machine you are developing on. As part of your installation activities, you may need to open port 27017 (or whatever port you wish to use) so that the server can accept incoming network traffic. You may also need to change the mongod.conf file to configure the bindIP for the interface(s) you wish the server to listen on.
 
 Set up environment variables that point to the host and port number of your server. The applong.js (and other) scripts on this app assume that the environment variables
 
