@@ -84,8 +84,13 @@ or edit applong.js in the app.listen() function and set the desired port number 
  ```angular2html
 http://your-development-machine-hostname:port/
 ```
-The final slash '/' is important because that is the first character of the query string, and in an Express.js application, routing is done based on the value of the query string.
+The final slash '/' is important because that is the first character of the resource path, and in an Express.js application, routing is done based on the value of the resource path.
 
+## HTTP Requests Supported By This App
+| Resource Path | Yields |
+| --------------|--------|
+     | '/'      | List of top 10 teams|
+     | '/members' | List of members in each team|
 ## Running the tests
 
 Explain how to run the automated tests for this system
